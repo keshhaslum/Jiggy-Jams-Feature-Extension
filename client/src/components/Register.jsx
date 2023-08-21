@@ -22,10 +22,7 @@ export default function Register() {
             method: "POST",
             data: credentials,
           });
-          //use navigate hook
-          //redirect user to log in
-          //don't need token bit
-          //store it locally
+        
           localStorage.setItem("token", data.token);
           console.log(data.message, data.token);
           setData(data.message);
@@ -89,7 +86,4 @@ export default function Register() {
     )
       
       
-      //not sure if this is correct for registration
-      //do I need a request data function - no
-      //also do I need a hash part anywhere?
     }

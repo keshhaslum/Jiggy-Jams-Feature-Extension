@@ -1,27 +1,19 @@
-import { useEffect, useState } from "react"; // this  isn't working
-import App from "../App"; // is this correct
-import { Link } from "react-router-dom"; // need to import the link
+import { useEffect, useState } from "react"; 
+import { Link } from "react-router-dom"; 
 
-// can't pass a prop that doesn't exist - only in the brackets () not the body of the function//
 
 function ProductList() {
-  // showJamProfile or currentJamProfile doesn't work here not sure why
-  const [allJams, setAllJams] = useState([]); // holds all data for all jams, if you look at postman you will see the data is in an array []
-  // const showJamProfile = (id) => {
-  //   jam.id;
-  //   console.log(id, "test");
-  // }; // works on console
+  const [allJams, setAllJams] = useState([]); 
 
   useEffect(() => {
-    // always runs when your pages loads  - e.g. allJams function
-    // have to call getAllJams as you can't name the same as the state e.g. allJams which holding the data
+ 
     getAllJams();
   }, []);
 
   const getAllJams = () => {
     console.log("hey");
     fetch("/api/products") 
-      .then((response) => response.json()) // converts in javascript from json in postman
+      .then((response) => response.json()) 
       .then((jams) => {
         console.log(jams);
         setAllJams(jams);
@@ -72,16 +64,13 @@ function ProductList() {
               </div>
             </div>
           </div>
-          // </span> // removed to return to a normal grid
+       
         ))}
       </div>
     </div>
   );
 }
 
-//css tricks
-// router student profile watch again
-// control c - stop front end
-// can I show the name of the value?
 
-export default ProductList; // always have to export the file called same as filename and function name
+
+export default ProductList; 

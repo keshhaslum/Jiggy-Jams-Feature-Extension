@@ -80,5 +80,5 @@ This is a Feature Extension project of [Carli's](https://github.com/Carli27/jigg
 
 ### Development
 
-- Run `npm start` in project directory to start the Express server on port 5000
-- In another terminal, in the project directory do `cd client` and run `npm run dev` to start the client in development mode with hot reloading in port 5173 (front end)
+- Run `npm start` in project directory to start the Express server on port 4000
+- In another terminal, in the project directory do `cd client` and run `npm run dev` to open the page(front end)
