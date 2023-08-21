@@ -1,51 +1,82 @@
--u# jiggyjams
+# Jiggy Jams 
 
-This is a full stack app to show the products available at jiggy jams and eventually will be a website people can buy from. Jiggy jams signature jam is a Scotch Bonnet Chilli Jam that can be a condiment, sauce, with cheese or incoporated into a marinade to give a spicy kick if that's your jam (see what I did there)
+This is a Feature Extension project of [Carli's](https://github.com/Carli27/jiggyjams) full stack app to show the products available at Jiggy Jams and eventually will be a website people can buy from. 
 
-### Basic Requirments (to do everytime you open this project - but ONLY after you've followed the steps below)
+## Components I added
 
-- Run `npm start` in project directory from terminal to start the Express server on port 4000
-- In another terminal run in the project directory again `cd client` then `npm run dev` to view the front end (local host browser view)
+1. Admin page to add and delete jams.
 
-## Setup
+2. Nav bar.
 
-### 1. Dependencies
+3. Log in and registration page.
 
-- Run `npm install` in project directory. This will install server-related dependencies such as `express`.
-- `cd client` and run `npm install`. This will install client dependencies (React).
+## 🌱 Next version
 
-###
+1. Add to basket function
 
-- Access the MySQL interface in your terminal by running `mysql -u root -p`
-- Create a new database called test: `create database test`. To check this has been done in mysql type command `show databases`;
+2. Favourites section
 
-- Add a `.env` file to the project folder of this repository containing the MySQL authentication information for MySQL user. For example:
+### 📦 Dependencies
 
-```bash
-  DB_HOST=localhost
-  DB_USER=root
-  DB_NAME=jams
-  DB_PASS=root
-```
+1. Run `npm install` in project directory.
 
-Ensure you created the env in the project folder and not a sub folder or the file will not work.
+2. Run `npm install react-router-dom`.
 
-- Run `npm run migrate` in the project folder of this repository, in a new terminal window. This will create a table called 'products' in your database.
+3. Run `npm install jsonwebtoken bcrypt` for the log in backend component - this creates a token for each user registered
 
-- Make sure you understand how the `products` & `clients` table is constructed. In your MySQL console, you can run `use jams;` and then `describe products;` to see the structure of the products table & `describe clients;` to see the structure of the clients table.
+4. Run `npm install react-axios` - axios is a library to use fetch requests needed for the login/ register  component
 
-- Products will include a table with the following fields: id, name, ingredients, description, quantity, price, size and image
+5. Run `npm i react-router-dom`
 
-- Clients will in include a table with the following fields: username, password
+6. Run `npm start` to start the Express server.
+      
+7. `cd client` and run `npm install`.
 
-- Everytime you make a change to the init_db_sql file you need to run `npm run migrate`
+8. Run `npm run dev` in the client folder as well to view in the local host browser.
 
-- Run `npm install jsonwebtoken bcrypt` for the log in backend component - this creates a token for each user registered
+### 💾 Database Setup
 
-- Run `npm install react-axios` - axios is a library to use fetch requests needed for the login/ register  component
+1. Create a database called `jams`.
+2. Create a `.env` file in the project directory with the following structure:
 
-- Run `npm i react-router-dom`
+| Variable | Value         |
+| -------- | ------------- |
+| DB_HOST  | localhost     |
+| DB_USER  | `<username>`  |
+| DB_NAME  | jams          |
+| DB_PASS  | `<password>`  |
 
+3. Run `npm run migrate`.
+
+## 📋 Tables in test:
+
+| Tables_in_jams          |
+| ----------------------- |
+| jamusers                |
+| products                |
+
+
+
+## 📋 Table structure for products:
+
+| Field         | Type         | Null | Key | Default | Extra          |
+| ------------- | ------------ | ---- | --- | ------- | -------------- |
+| id            | int          | NO   | PRI | NULL    | auto_increment |
+| name          | varchar(50)  | NO   |     | NULL    |                |
+| ingredients   | longtext     | NO   |     | NULL    |                |
+| description   | longtext     | NO   |     | NULL    |                |
+| quanitity     | int          | NO   |     | NULL    |                |
+| price         | int          | NO   |     | NULL    |                |
+| size          | int          | NO   |     | NULL    |                |
+| image         | varchar(999) | NO   |     | NULL    |                |
+
+## 📋 Table structure for jamusers:
+
+| Field         | Type          | Null | Key | Default | Extra          |
+| ------------- | ------------  | ---- | --- | ------- | -------------- |
+| id            | int           | NO   | PRI | NULL    | auto_increment |
+| username      | varchar(255)  | NO   |     | NULL    |                |
+| password      | varchar(255)  | NO   |     | NULL    |token encrypted |
 
 ### Development
 
